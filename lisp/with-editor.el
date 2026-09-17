@@ -350,7 +350,8 @@ And some tools that do not handle $EDITOR properly also break."
       (with-editor-return nil)
       (accept-process-output nil 0.1)
       (with-temp-buffer
-        (setq default-directory dir)
+        (setq default-directory dir
+              magit--default-directory dir)
         (setq-local with-editor-post-finish-hook post-finish-hook)
         (when post-commit-hook
           (setq-local git-commit-post-finish-hook post-commit-hook))
